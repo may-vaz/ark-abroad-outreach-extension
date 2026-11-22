@@ -1,0 +1,16 @@
+{
+  "a-pipe.txt": { "name": "Maeve Vas", "city": "Sydney", "homeCountry": "India", "currentRole": "Junior AI/ML Engineer",
+    "pastCompanies": ["The Unmarketing Agency", "Zenith Solutions Pvt Ltd"], "universities": ["Padre Conceicao College of Engineering"], "skillsInclude": ["Python", "SQL"] },
+  "b-company-first.txt": { "name": "Rahul Mehta", "city": "Melbourne", "homeCountry": "India", "currentRole": "Business Analyst",
+    "pastCompanies": ["Deloitte", "Tata Consultancy Services"], "universities": ["Monash University", "University of Mumbai"], "skillsInclude": ["Power BI", "SQL"] },
+  "c-title-at.txt": { "name": "Priyanka Nair", "city": "Brisbane", "homeCountry": "India", "currentRole": "Data Analyst",
+    "pastCompanies": ["Woolworths Group", "Infosys Limited"], "universities": ["University of Queensland", "Anna University"], "skillsInclude": ["Python", "SQL"] },
+  "d-dates-first-tabs.txt": { "name": "Chen Wei", "city": "Perth", "currentRole": "Software Engineer",
+    "pastCompanies": ["Atlassian", "Commonwealth Bank of Australia"], "universities": ["Curtin University"], "skillsInclude": ["Java", "AWS"] },
+  "e-company-dates-same-line.txt": { "name": "Abdul Rahman", "city": "Sydney", "homeCountry": "India", "currentRole": "Senior Consultant",
+    "pastCompanies": ["Accenture Australia", "Wipro Technologies"], "universities": ["Macquarie University", "Jawaharlal Nehru Technological University"] },
+  "f-internships-projects.txt": { "name": "Sneha Kulkarni", "city": "Adelaide", "homeCountry": "India", "currentRole": "Machine Learning Intern",
+    "pastCompanies": ["Canva", "Persistent Systems"], "universities": ["University of Adelaide", "Savitribai Phule Pune University"], "skillsInclude": ["Python"] },
+  "g-minimal-dash.txt": { "name": "Lucas Oliveira", "city": "Gold Coast", "homeCountry": "Brazil", "currentRole": "Customer Service Representative",
+    "pastCompanies": ["Telstra", "Starbucks", "Lojas Renner"], "universities": ["TAFE Queensland", "Universidade de São Paulo"] }
+}

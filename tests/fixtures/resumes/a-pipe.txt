@@ -1,0 +1,11 @@
+Maeve Vas
+Sydney, NSW | maeve@email.com | +61 400 000 000
+EXPERIENCE
+Junior AI/ML Engineer | The Unmarketing Agency | Sep 2025 – Present
+• Built a RAG assistant that cut support tickets by 35%
+AI Intern | Zenith Solutions Pvt Ltd | Jun 2025 – Sep 2025
+• Trained classifiers improving accuracy by 12%
+EDUCATION
+B.E. Information Technology, Padre Conceicao College of Engineering, Goa, India — 2025
+SKILLS
+Python, SQL, PyTorch

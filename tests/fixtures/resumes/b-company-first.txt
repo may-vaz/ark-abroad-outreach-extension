@@ -1,0 +1,19 @@
+RAHUL MEHTA
+Melbourne VIC 3000 · rahul.mehta@gmail.com · linkedin.com/in/rahulmehta
+PROFESSIONAL EXPERIENCE
+Deloitte, Melbourne
+Business Analyst
+March 2022 – Present
+- Led requirements workshops for 12 stakeholders across finance and operations
+- Reduced month-end reporting time by 30% using Power BI
+Tata Consultancy Services, Mumbai, India
+Systems Engineer
+July 2018 – February 2022
+- Maintained ETL pipelines processing 5M records daily
+EDUCATION
+Master of Business Analytics
+Monash University, 2022
+Bachelor of Engineering
+University of Mumbai, 2018
+TECHNICAL SKILLS
+SQL; Power BI; Python; Tableau; JIRA

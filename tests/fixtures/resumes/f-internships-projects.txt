@@ -1,0 +1,13 @@
+Sneha Kulkarni
+Adelaide, SA
+Education
+University of Adelaide, Master of Computing (2023 – 2025)
+Savitribai Phule Pune University, BE Computer Engineering (2017 – 2021)
+Internships
+Machine Learning Intern — Canva (Nov 2024 – Feb 2025)
+• Improved image tagging precision by 9%
+Software Engineering Intern — Persistent Systems (Jan 2021 – Jun 2021)
+Projects
+Resume Parser — built with spaCy, 92% field accuracy
+Skills
+Python, PyTorch, Docker

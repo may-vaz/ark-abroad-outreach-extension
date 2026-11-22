@@ -1,0 +1,15 @@
+Priyanka Nair
+Brisbane, Queensland
+Summary
+Data analyst with 4 years of experience in retail analytics.
+Work History
+Data Analyst at Woolworths Group
+Jan 2023 - Present
+Built demand forecasting models that improved accuracy by 18%.
+Junior Analyst at Infosys Limited
+2019 - 2022
+Automated weekly reports, saving 10 hours per week.
+Education
+Master of Data Science - University of Queensland (2022)
+B.Tech Computer Science - Anna University, Chennai, India (2019)
+Skills: Python | R | SQL | Excel

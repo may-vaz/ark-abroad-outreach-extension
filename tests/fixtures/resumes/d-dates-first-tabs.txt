@@ -1,0 +1,11 @@
+Chen Wei
+Perth WA | chen.wei@outlook.com
+Experience
+2021 – Present    Software Engineer, Atlassian
+    • Shipped features used by 2M users
+2019 – 2021    Graduate Developer, Commonwealth Bank of Australia
+    • Migrated 40 services to AWS
+Education
+2015 – 2019    Bachelor of Computer Science, Curtin University
+Skills
+Java, TypeScript, AWS, Kubernetes

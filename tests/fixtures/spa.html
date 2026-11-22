@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><title>(4) Shilpa Jha | LinkedIn</title></head><body><main id="m">
+<section><h1>Shilpa Jha</h1><p>She/Her · 2nd</p><p>HR Generalist at Acme Corp</p><p>Mumbai, Maharashtra, India</p>
+<button aria-label="Invite Shilpa Jha to connect">Connect</button><button>Message</button></section>
+<a id="go" href="/in/ansh-kandari-33b2a5270/">Ansh Kandari</a>
+</main>
+<script>
+// Simulates LinkedIn's client-side navigation: URL first, content ~1.5s later, <title> ~3s later.
+document.getElementById('go').addEventListener('click', e => {
+  e.preventDefault();
+  history.pushState({}, '', '/in/ansh-kandari-33b2a5270/');
+  setTimeout(() => {
+    document.getElementById('m').innerHTML = `
+      <section><div><span>Ansh Kandari</span></div><p>He/Him · 2nd</p>
+      <p>IT Support Executive @Marscosmetics | ISO 27001 Certified | Oracle Certified | AWS Certified</p>
+      <p>Greater Delhi Area · Contact info</p><p>500+ connections</p><p>Aakash, Raja and 1 other mutual connection</p>
+      <button aria-label="Invite Ansh Kandari to connect">Connect</button><button>Message</button><button>More</button></section>
+      <section><h2>About</h2><p>AI-driven Cloud &amp; Security Engineer and IEEE research paper author.</p></section>
+      <section><h2>Experience</h2><ul><li><p>IT Support Executive</p><p>MARS Cosmetics · Full-time</p><p>2024 - Present</p></li></ul></section>
+      <section><h2>Education</h2><ul><li><p>Jagan Institute of Management Studies</p><p>BCA</p></li></ul></section>`;
+  }, 1500);
+  setTimeout(() => { document.title = '(4) Ansh Kandari | LinkedIn'; }, 3000);
+});
+</script></body></html>
