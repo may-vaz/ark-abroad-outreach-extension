@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Outreach AI</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header class="top">
+    <img src="icons/icon48.png" alt="" width="22" height="22" />
+    <h1>Outreach AI</h1>
+    <span class="pill" id="engine-pill" title="Message engine">Templates</span>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" class="tab active" data-tab="compose" aria-selected="true">Compose</button>
+    <button role="tab" class="tab" data-tab="contacts" aria-selected="false">Contacts <span class="badge hidden" id="due-badge"></span></button>
+    <button role="tab" class="tab" data-tab="profile" aria-selected="false">Profile</button>
+  </nav>
+
+  <!-- ══ COMPOSE ══ -->
+  <main id="tab-compose" class="panel active">
+    <button class="notice clickable hidden" id="setup-banner" data-goto="profile">
+      <span><strong>Complete your profile</strong><br /><span class="muted">Messages are personalised from your background.</span></span><span aria-hidden="true">›</span>
+    </button>
+
+    <div id="not-profile" class="empty hidden">
+      <p><strong>No profile open</strong></p>
+      <p class="muted small">Open a LinkedIn member's profile to compose a message.</p>
+      <button class="notice clickable hidden" id="due-callout" data-goto="contacts"></button>
+    </div>
+
+    <div id="own-profile" class="empty hidden">
+      <p><strong>This is your own profile</strong></p>
+      <p class="muted small">Open another member's profile to compose a message.</p>
+      <button class="link" data-goto="profile">Import this profile into Profile ›</button>
+    </div>
+
+    <p id="reading" class="muted small hidden">Reading profile…</p>
+
+    <section id="recipient" class="card hidden">
+      <div class="row">
+        <div class="avatar" id="r-avatar">?</div>
+        <div class="grow">
+          <div class="r-name" id="r-name"></div>
+          <div class="muted small clamp" id="r-headline"></div>
+        </div>
+        <button class="icon-btn" id="reanalyze-btn" title="Refresh profile data" aria-label="Refresh profile data">↻</button>
+      </div>
+      <div class="row small conn"><span class="dot" id="conn-dot"></span><span id="conn-text" class="muted"></span></div>
+      <div id="contacted" class="contacted hidden"></div>
+      <div id="cg-wrap" class="hidden">
+        <div class="lbl">In common</div>
+        <div id="cg" class="chips"></div>
+      </div>
+    </section>
+
+    <section id="composer" class="hidden">
+      <label class="lbl">Goal</label>
+      <div class="pills" id="goal-pills"></div>
+
+      <div id="reply-wrap" class="hidden">
+        <label class="lbl" for="their-message">Message you received</label>
+        <textarea id="their-message" rows="3" placeholder="Paste the message you're replying to"></textarea>
+      </div>
+      <div id="job-ref-wrap" class="hidden">
+        <label class="lbl" for="job-ref">Role</label>
+        <input id="job-ref" placeholder="Job title or job ID" />
+      </div>
+
+      <label class="lbl">Format</label>
+      <div class="toggle" id="format-toggle">
+        <button data-format="note">Connection note</button>
+        <button data-format="dm">Message</button>
+      </div>
+      <p class="hint" id="format-hint"></p>
+
+      <details class="more">
+        <summary>Additional context</summary>
+        <textarea id="note" rows="2" placeholder="Optional. For example: met at the Melbourne Data meetup"></textarea>
+      </details>
+
+      <button class="btn primary full" id="write-btn">Generate drafts</button>
+    </section>
+
+    <section id="progress" class="hidden" aria-live="polite">
+      <div class="spinner"></div><span class="muted small" id="progress-label">Generating…</span>
+    </section>
+
+    <div id="error" class="notice error hidden" role="alert"></div>
+
+    <section id="result" class="hidden">
+      <div class="row"><span class="lbl grow">Drafts</span><button class="link hidden" id="regen-btn">Regenerate</button></div>
+      <div id="drafts" role="radiogroup" aria-label="Drafts"></div>
+
+      <label class="lbl" for="message">Message</label>
+      <textarea id="message" rows="6" spellcheck="true"></textarea>
+      <div class="meter"><div class="meter-bar" id="meter-bar"></div></div>
+      <div class="row small"><span id="count" class="muted grow"></span><span id="score-chip" class="score-chip"></span></div>
+      <ul id="issues" class="issues"></ul>
+
+      <button class="btn primary full" id="insert-btn" title="Places the text in the open LinkedIn box. Does not send.">Insert into LinkedIn</button>
+      <div class="actions two">
+        <button class="btn" id="copy-btn">Copy</button>
+        <button class="btn" id="sent-btn">Mark as sent</button>
+      </div>
+      <p class="muted tiny" id="metrics"></p>
+    </section>
+  </main>
+
+  <!-- ══ CONTACTS ══ -->
+  <main id="tab-contacts" class="panel">
+    <div class="row">
+      <input id="search" class="grow" placeholder="Search name or company" />
+      <select id="status-filter" class="mini" aria-label="Filter by status"></select>
+    </div>
+    <div id="contacts"></div>
+    <div id="no-contacts" class="empty hidden">
+      <p><strong>No contacts yet</strong></p>
+      <p class="muted small">Contacts are added when you mark a message as sent. You'll see follow-up dates here, and a "contacted" indicator on their profile.</p>
+    </div>
+    <button class="btn full ghost hidden" id="export-btn">Export CSV</button>
+  </main>
+
+  <!-- ══ PROFILE ══ -->
+  <main id="tab-profile" class="panel">
+    <section class="card">
+      <div class="row"><strong class="grow">Background</strong><span class="muted tiny">Stored on this device</span></div>
+      <p class="muted small">Used to personalise every message and to find what you have in common with the people you contact.</p>
+
+      <div class="import-row">
+        <label class="btn import" for="resume-input">Upload resume (PDF)</label>
+        <input type="file" accept="application/pdf" class="hidden" id="resume-input" />
+        <button class="btn import" id="import-linkedin-btn">Import from LinkedIn</button>
+      </div>
+      <p class="muted small" id="import-status"></p>
+
+      <div id="me-summary" class="summary hidden">
+        <div class="me-name" id="me-name"></div>
+        <div class="muted small" id="me-role"></div>
+        <div class="chips" id="me-chips"></div>
+      </div>
+
+      <details class="more" id="edit-details">
+        <summary>Details</summary>
+        <label class="lbl" for="s-name">Full name</label><input id="s-name" />
+        <label class="lbl" for="s-targetRole">Target role</label><input id="s-targetRole" placeholder="e.g. Business Analyst" />
+        <label class="lbl" for="s-currentRole">Current role</label><input id="s-currentRole" />
+        <label class="lbl" for="s-strengths">Key achievement</label><textarea id="s-strengths" rows="2" placeholder="Quantified if possible, e.g. reduced reporting time by 40%"></textarea>
+        <label class="lbl" for="s-skills">Skills</label><input id="s-skills" placeholder="Comma-separated" />
+        <label class="lbl" for="s-universities">Education</label><input id="s-universities" placeholder="Universities, comma-separated" />
+        <label class="lbl" for="s-pastCompanies">Employers</label><input id="s-pastCompanies" placeholder="Comma-separated" />
+        <div class="grid2">
+          <div><label class="lbl" for="s-homeCountry">Country of origin</label><input id="s-homeCountry" /></div>
+          <div><label class="lbl" for="s-city">City</label><input id="s-city" placeholder="e.g. Melbourne" /></div>
+        </div>
+        <label class="lbl" for="s-bio">Summary</label><textarea id="s-bio" rows="3"></textarea>
+        <p class="muted tiny" id="save-status">Changes are saved automatically.</p>
+      </details>
+    </section>
+
+    <section class="card">
+      <strong>Writing preferences</strong>
+      <div class="grid2">
+        <div>
+          <label class="lbl" for="tone">Tone</label>
+          <select id="tone"><option value="warm">Friendly</option><option value="formal">Professional</option><option value="direct">Direct</option></select>
+        </div>
+        <div>
+          <label class="lbl" for="note-allowance">Monthly note limit</label>
+          <input id="note-allowance" type="number" min="1" max="200" />
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="premium" /> LinkedIn Premium (300-character connection notes)</label>
+    </section>
+
+    <section class="card">
+      <strong>AI model</strong>
+      <p class="muted small">Optional. Without a key, drafts are generated from templates. With your Anthropic API key, Claude writes the drafts.</p>
+      <div class="row">
+        <input id="api-key" type="password" class="grow" placeholder="sk-ant-…" autocomplete="off" aria-label="Anthropic API key" />
+        <button class="btn" id="test-key-btn">Verify</button>
+      </div>
+      <p class="muted small" id="key-status"></p>
+    </section>
+  </main>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
