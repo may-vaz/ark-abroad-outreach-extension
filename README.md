@@ -2,7 +2,6 @@
 
 **For Ark Abroad's clients (international students and skilled migrants in Australia): open a profile, pick a goal, and get three good drafts. Insert one, send it yourself, and it's tracked.**
 
-![Drafts](docs/3-free-drafts.png)
 
 ## Product structure
 Three tabs, each with a single responsibility:
